@@ -38,9 +38,10 @@ const Post = async ({ params: { slug } }: Props) => {
           </div>
           <section className="relative flex flex-col">
             <div className="flex py-4">
-              {post.categories.map((cat, i) => (
-                <CategoryBadge key={i}>{cat.title}</CategoryBadge>
-              ))}
+              {post.categories &&
+                post.categories.map((cat, i) => (
+                  <CategoryBadge key={i}>{cat.title}</CategoryBadge>
+                ))}
             </div>
 
             {/* Written Stuff */}

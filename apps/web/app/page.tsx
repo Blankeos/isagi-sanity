@@ -36,7 +36,6 @@ export default async function Web() {
   console.log(posts);
   return (
     <div className="fluid-container py-20">
-      Not in preview
       {/* <h1>Web (/)</h1>
       <Button /> */}
       <HomeGrid posts={posts} />

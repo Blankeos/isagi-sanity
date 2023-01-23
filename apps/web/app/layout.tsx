@@ -12,8 +12,13 @@ export default function RootLayout({
       <body>
         <div className="min-h-screen flex flex-col">
           <nav className="fluid-container py-3 flex flex-col">
-            <div className="text-center py-5 flex flex-col">
-              <div className="font-semibold mb-2">⚽ Isagi Blog ⚽</div>
+            <div className="py-5 flex flex-col items-center">
+              <Link
+                href="/"
+                className="p-0.5 px-1.5 hover:bg-gray-100 mb-2 rounded"
+              >
+                <div className="font-semibold">⚽ Isagi Blog ⚽</div>
+              </Link>
               <p className="text-sm text-gray-500">
                 Isagi Yoichi from Blue Lock
               </p>
@@ -48,6 +53,9 @@ export default function RootLayout({
                 >
                   Carlo Taleon
                 </Link>
+              </p>
+              <p className="mt-5 text-xs text-white text-center">
+                Sanity + Next 13 + TailwindCSS
               </p>
             </div>
           </footer>

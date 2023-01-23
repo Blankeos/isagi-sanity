@@ -8,6 +8,7 @@ import myLogo from './logo'
 
 // Icons
 import {CodeBlockIcon} from '@sanity/icons'
+import {myTheme} from './theme'
 
 export default defineConfig({
   name: 'default',
@@ -29,4 +30,10 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
+  studio: {
+    components: {
+      logo: myLogo,
+    },
+  },
+  theme: myTheme,
 })

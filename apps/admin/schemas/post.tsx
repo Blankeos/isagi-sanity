@@ -13,6 +13,12 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'string',
+      description: 'Short description for the post that will appear in before clicked.',
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',

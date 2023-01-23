@@ -6,7 +6,7 @@ import CategoryBadge from "./CategoryBadge";
 import ClientSideRoute from "./ClientSideRoute";
 
 interface CardProps {
-  categories: Category[];
+  categories?: Category[];
   mainImage: Image;
   url: string;
   title: string;
@@ -29,11 +29,15 @@ const Card = ({
             alt={title}
             fill
           />
-          {categories.map((c) => (
-            <CategoryBadge className="absolute top-4 right-4 shadow-xl">
-              {c.title}
-            </CategoryBadge>
-          ))}
+          {categories &&
+            categories.map((c, i) => (
+              <CategoryBadge
+                key={i}
+                className="absolute top-4 right-4 shadow-xl"
+              >
+                {c.title}
+              </CategoryBadge>
+            ))}
         </div>
         {/* Body */}
         <div className="py-2">
