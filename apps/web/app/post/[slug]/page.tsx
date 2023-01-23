@@ -12,6 +12,23 @@ type Props = {
   };
 };
 
+export async function generateStaticParams() {
+  const query = groq`
+  *[_type == 'post']
+  {
+    slug
+  }
+  `;
+
+  const slugs: Post[] = await client.fetch(query);
+
+  const slugRoutes = slugs.map((slug) => slug.slug.current);
+
+  return slugRoutes.map((slug) => ({
+    slug,
+  }));
+}
+
 const Post = async ({ params: { slug } }: Props) => {
   const query = groq`
     *[_type == 'post' && slug.current == $slug][0]
@@ -86,8 +103,6 @@ const Post = async ({ params: { slug } }: Props) => {
       </article>
     </div>
   );
-
-  return <div className="fluid-container">Post {slug}</div>;
 };
 
 export default Post;
