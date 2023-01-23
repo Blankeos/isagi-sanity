@@ -33,7 +33,9 @@ export default async function Web() {
     );
   }
 
-  const posts = await client.fetch(query);
+  const posts = await client.fetch(query, {
+    cache: "no-store",
+  });
   console.log(posts);
   return (
     <div className="fluid-container py-20">

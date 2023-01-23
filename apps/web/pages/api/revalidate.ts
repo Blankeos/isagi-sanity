@@ -27,12 +27,7 @@ export default async function handler(
   }
 
   const jsonBody = JSON.parse(body);
-  console.log({
-    jsonBody: jsonBody,
-    jsonBodySlug: jsonBody.slug,
-  });
 
-  console.log(`Revalidating: /post/${jsonBody.slug.current}`);
   try {
     // This should be the actual path not a rewritten path
     // e.g. for "/blog/[slug]" this should be "/blog/post-1"
