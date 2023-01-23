@@ -23,7 +23,7 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, {schemaType}
         .options({
           // Required: Accepts an async function
           // OR a string
-          url: `${'http://localhost:3000'}/api/preview`,
+          url: `${'https://isagi.vercel.app'}/api/preview`,
           // Optional: Set the default size
           defaultSize: 'desktop', // default 'desktop'
           // Optional: Add a reload button, or reload new document revisions
