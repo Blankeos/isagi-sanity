@@ -26,16 +26,17 @@ export default async function handler(
       .json({ success: false, message: "Invalid signature" });
   }
 
+  const jsonBody = JSON.parse(body);
   console.log({
-    request: req,
-    requestBody: req.body,
+    jsonBody: jsonBody,
+    jsonBodySlug: jsonBody.slug,
   });
-  // console.log(`Revalidating: /post/${req.body.slug.current}`);
 
+  console.log(`Revalidating: /post/${jsonBody.slug.current}`);
   try {
     // This should be the actual path not a rewritten path
     // e.g. for "/blog/[slug]" this should be "/blog/post-1"
-    await res.revalidate(`/post/${req.body.slug.current}`);
+    await res.revalidate(`/post/${jsonBody.slug.current}`);
     return res.json({ revalidated: true });
   } catch (err) {
     // If there was an error, Next.js will continue
