@@ -4,6 +4,7 @@ import { client } from "../../../lib/sanity.client";
 import Image from "next/image";
 import CategoryBadge from "../../../components/CategoryBadge";
 import urlFor from "../../../lib/urlFor";
+import PortableText from "../../../components/PortableText";
 
 type Props = {
   params: {
@@ -69,7 +70,19 @@ const Post = async ({ params: { slug } }: Props) => {
             </div>
           </section>
         </section>
-        <section>Heading here</section>
+
+        {/* Spacer */}
+        <div className="h-16" />
+
+        {/* Body of Text */}
+        {post.body ? (
+          <PortableText portableTextContent={post.body} />
+        ) : (
+          "Content is empty"
+        )}
+
+        {/* Spacer */}
+        <div className="h-20" />
       </article>
     </div>
   );

@@ -1,9 +1,10 @@
 import { Button } from "ui";
-import Card from "../components/Card";
+
 import { previewData } from "next/headers";
 import { groq } from "next-sanity";
 import { client } from "../lib/sanity.client";
-import { PreviewSuspense } from "next-sanity/preview";
+
+import PreviewSuspense from "../components/PreviewSuspense";
 import PreviewHomeGrid from "../components/PreviewHomeGrid";
 import HomeGrid from "../components/HomeGrid";
 

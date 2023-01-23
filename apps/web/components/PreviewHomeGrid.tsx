@@ -9,10 +9,15 @@ type PreviewHomeGridProps = {
 };
 
 const PreviewHomeGrid = ({ query }: PreviewHomeGridProps) => {
+  console.log("fetching preview");
   const posts = usePreview(null, query);
   console.log("Loading posts...", posts);
 
-  return <HomeGrid posts={posts} />;
+  return (
+    <div className="fluid-container py-20">
+      <HomeGrid posts={posts} />
+    </div>
+  );
 };
 
 export default PreviewHomeGrid;

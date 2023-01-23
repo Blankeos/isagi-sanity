@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import Link from "next/link";
+import { previewData } from "next/headers";
 
 export default function RootLayout({
   children,
@@ -11,6 +12,14 @@ export default function RootLayout({
       <head />
       <body>
         <div className="min-h-screen flex flex-col">
+          {previewData() && (
+            <div className="bg-yellow-400 text-center py-1.5 px-7">
+              <h1 className="text-gray-800 font-bold">Preview</h1>
+              <p className="text-xs font-base text-gray-500">
+                Split the screen and open the editor to see changes live!
+              </p>
+            </div>
+          )}
           <nav className="fluid-container py-3 flex flex-col">
             <div className="py-5 flex flex-col items-center">
               <Link
