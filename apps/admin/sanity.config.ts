@@ -2,7 +2,7 @@ import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
-import {structure} from './structure'
+import {structure, defaultDocumentNode} from './structure'
 
 import myLogo from './logo'
 
@@ -21,6 +21,7 @@ export default defineConfig({
     deskTool({
       title: 'For Writers',
       structure,
+      defaultDocumentNode,
     }),
     visionTool({
       title: 'For Devs',
