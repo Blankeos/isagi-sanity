@@ -2,7 +2,13 @@
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build",
+        "$NEXT_PUBLIC_SANITY_PROJECT_ID",
+        "$NEXT_PUBLIC_SANITY_DATASET",
+        "$NEXT_PUBLIC_SANITY_API_VERSION",
+        "$MY_SECRET_TOKEN"
+      ],
       "outputs": ["dist/**", ".next/**"]
     },
     "lint": {
@@ -11,5 +17,6 @@
     "dev": {
       "cache": false
     }
-  }
+  },
+  "globalDependencies": [".env.local", ".env"]
 }
