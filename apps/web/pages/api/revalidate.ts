@@ -26,6 +26,9 @@ export default async function handler(
       .json({ success: false, message: "Invalid signature" });
   }
 
+  console.log(`Revalidating: /post/${req.body.slug.current}`);
+  console.log(req.body);
+
   try {
     // This should be the actual path not a rewritten path
     // e.g. for "/blog/[slug]" this should be "/blog/post-1"
