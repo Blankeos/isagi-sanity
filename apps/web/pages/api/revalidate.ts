@@ -27,6 +27,7 @@ export default async function handler(
   }
 
   console.log(`Revalidating: /post/${req.body.slug.current}`);
+
   console.log(req.body);
 
   try {
