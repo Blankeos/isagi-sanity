@@ -82,6 +82,7 @@ importers:
     specifiers:
       '@babel/core': ^7.0.0
       '@sanity/image-url': ^1.0.2
+      '@sanity/webhook': ^2.0.0
       '@types/node': ^17.0.12
       '@types/react': ^18.0.22
       '@types/react-dom': ^18.0.7
@@ -101,6 +102,7 @@ importers:
       ui: workspace:*
     dependencies:
       '@sanity/image-url': 1.0.2
+      '@sanity/webhook': 2.0.0
       next: 13.1.4_pjwopsidmaokadturxaafygjp4
       next-sanity: 4.1.1_next@13.1.4+react@18.2.0
       react: 18.2.0
