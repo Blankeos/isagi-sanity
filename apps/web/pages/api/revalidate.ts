@@ -5,8 +5,10 @@ export default async function handler(
   res: NextApiResponse
 ) {
   console.log({
+    request: req,
     secretReceived: req.query.secret,
     slugReceived: req.query.slug,
+    requestBody: req.body,
   });
   // Check for secret to confirm this is a valid request
   if (req.query.secret !== process.env.MY_SECRET_TOKEN) {
